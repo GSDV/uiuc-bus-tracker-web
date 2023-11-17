@@ -1,5 +1,5 @@
 # UIUC Bus Tracker
-UIUC Bus Tracker.
+A bus tracker for UIUC: Campus, Champaign, and Urbana!
 
 ## Setup
 Run
@@ -23,4 +23,4 @@ The suggested version is "v2.2", since that is what this project has been built 
 This UIUC bus tracker tracks all active bus stops and routes in Champaign and Urbana, Illinois. You can search through all bus stops, as well as view bus stops nearby. It allows for favorited stops, conviently giving you the bus information you frequently use. Use the trip planner to organize a trip with multiple buses.
 
 
-<img src="https://github.com/GSDV/uiuc-bus-tracker/img/blob/main/thumbnail.png" alt="Homepage" style="width:100%;"/>
+<img src="https://github.com/GSDV/uiuc-bus-tracker/blob/main/img/thumbnail.png" alt="Homepage" style="width:100%;"/>
