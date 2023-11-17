@@ -1,5 +1,5 @@
 # UIUC Bus Tracker
-A bus tracker for UIUC: Campus, Champaign, and Urbana!
+A bus tracker for all of UIUC: Campus, Champaign, and Urbana!
 
 ## Setup
 Run
