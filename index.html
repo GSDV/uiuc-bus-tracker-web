@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<link rel="icon" href="./img/i.ico" type="image/x-icon">
+<link rel="stylesheet" href="./bus.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+<title>UIUC Bus Tracker</title>
+</head>
+
+<body>
+    <div id="nav">
+        <li id="home" class="active"><h3>Home</h3></li>
+        <li id="stops-list"><h3>Stops List</h3></li>
+        <li id="favorites"><h3>Favorites</h3></li>
+        <li id="nearby-stops"><h3>Nearby Stops</h3></li>
+        <li id="map"><h3>Map</h3></li>
+        <li id="trip-planner" class="right"><h3>Trip Planner</h3></li>
+    </div>
+
+
+
+    <div class="displays" id="home-display">
+        <h1>UIUC Bus Tracker</h1>
+        <h3>This website servers to provide accurate information for bus stops and routes around the University of Illinois at Urbana-Champaign campus.</h3>
+        <h3>It was made using MTD's Bus API.</h3>
+    </div>
+
+
+    <div class="displays" id="stops-list-display">
+        <div class="title-wrapper">
+            <div>
+                <h2>Search For Stops: </h2>
+                <input id="search-box" placeholder="Bus Stop">
+            </div>
+            <div>
+                <h3>Only Show Favorites:</h3>
+                <input id="only-favorites" type="checkbox">
+            </div>
+        </div>
+        <div id="stop-list" class="search-results"><h3>LOADING...</h3></div>
+    </div>
+
+
+    <div class="displays" id="favorites-display">
+        <div class="title-wrapper">
+            <h2>Favorited Stops</h2>
+            <h3>Keep track of your favorited bus stops here.</h3>
+        </div>
+        <div id="favorited-list" class="search-results"><h3>Empty</h3></div>
+    </div>
+
+
+    <div class="displays" id="nearby-stops-display">
+        <div class="title-wrapper">
+            <h2>Nearby Stops</h2>
+            <div style="display: flex; flex-direction: row;">
+                <h3>Get a list of stops near you:</h3>
+                <button onclick="getPosition()"><p style="color:black;">Find Nearby</p></button>
+            </div>
+        </div>
+        <div id="nearby-list" class="search-results"></div>
+    </div>
+
+    <div class="displays" id="map-display">
+        <div><h2>Daytime</h2><img src="./img/map/daytime.png"></div>
+        <div><h2>Evening</h2><img src="./img/map/evening.png"></div>
+        <div><h2>iStops</h2><img src="./img/map/istop.png"></div>
+    </div>
+
+
+    <div class="displays" id="trip-planner-display">
+        <div class="title-wrapper">
+            <h2>Trip Planner</h2>
+            <h3>Plan a trip between two stops.</h3>
+        </div>
+        <div id="grid-wrapper">
+            <div id="start-s">
+                <div class="wrapper-search"><input id="start-search" placeholder="Starting Bus Stop"></div>
+                <div id="start-results"><p>LOADING...</p></div>
+            </div>
+            <div id="end-s">
+                <div class="wrapper-search"><input id="end-search" placeholder="Ending Bus Stop"></div>
+                <div id="end-results"><p>LOADING...</p></div>
+            </div>
+            <div class="settings">
+                <div>
+                    <label>Minimize:</label>
+                    <select id="minimize">
+                        <option value="time" selected>time</option>
+                        <option value="walking">walking</option>
+                        <option value="transfers">transfers</option>
+                    </select>
+                </div>
+                <button onclick="verifyChoices()"><p>Generate Itineraries</p></button>
+            </div>
+            <div id="itineraries"></div>
+        </div>
+    </div>
+
+
+    <script src="./js/fetch.js"></script>
+    <script src="./js/tabs.js"></script>
+    <script src="./js/stop-info.js"></script>
+    <script src="./js/arrival-info.js"></script>
+    <script src="./js/nearby.js"></script>
+    <script src="./js/planner.js"></script>
+    <script src="./js/set-up.js"></script>
+    <!-- Leaflet.JS MAP -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>    
+</body>
+</html>

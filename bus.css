@@ -1,0 +1,471 @@
+/* ===== GENERAL STYLING ===== */
+* {
+    user-select: none;
+    box-sizing: border-box;
+    font-family: Verdana;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+
+/* ===== TEXTS CSS and CSS COLOR VARIABLES ===== */
+/* ===== for consistency across the project ===== */
+:root {
+    --illini-orange: #ff5f05;
+    --illini-orange-highlight: #ffdfcd;
+    --illini-orange-supplement: #ffbc95;
+    --altgeld-orange-highlight: #c84113;
+
+    --illini-blue: #13294b;
+    --illini-blue-highlight: #2f5184;
+    --illini-blue-supplement: #628ac6;
+    --sky-blue: #f0f0f5;
+}
+h1, h2, h3, h4, h5, h6 p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+h1 { font-size: 50px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; font-weight: 400; }
+p { font-size: 16px; }
+
+
+
+/* ===== NAVBAR ===== */
+#nav {
+    margin: 0;
+    padding: 0;
+    height: 5%;
+    min-height: 30px;
+    background-color: var(--illini-orange);
+    overflow: hidden;
+    list-style-type: none;
+}
+
+#nav li {float: left;}
+#nav li.right {float: right;}
+
+#nav li {
+    position: relative;
+    margin: 0;
+    padding: 0 18px;
+    height: 100%;
+    display: block;
+    color: white;
+}
+#nav li:hover {
+    background-color: var(--altgeld-orange-highlight);
+    cursor: pointer;
+}
+#nav li.active { background-color: var(--illini-blue); }
+#nav li.active:hover { background-color: var(--illini-blue-highlight); }
+
+#nav li h3 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* ===== DISPLAYS ===== */
+.displays {
+    width: 100%;
+    height: 95%;
+    min-height: 400px; 
+    background-color: var(--illini-orange-highlight);
+    overflow-y: scroll;
+}
+
+
+
+/* ===== HOMEPAGE ===== */
+#home-display {
+    background-image: linear-gradient(to bottom, rgba(165, 179, 251, 0.6), rgba(19, 41, 75, 0.95)), url(./img/alma-mater.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+#home-display h1, #home-display h3 {
+    margin: 50px;
+    color: white;
+}
+
+
+
+/* ===== STOP LIST, FAVORITES, and NEARBY STOPS ===== */
+.title-wrapper {
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.search-results  {
+    height: 85%;
+    border-top: 5px solid var(--altgeld-orange-highlight);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+.search-results .stop-ele {
+    margin: 15px;
+    padding: 14px 16px;
+    height: fit-content;
+    background-color: var(--illini-orange-supplement);
+    border-radius: 25px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.5s;
+}
+.search-results .stop-ele:hover {
+    background-color: var(--illini-blue-highlight);
+    color: white;
+}
+
+
+
+/* ===== NEARBY STOPS and TRIP PLANNER ===== */
+button {
+    margin: 0 0 0 10px;
+    padding: 3px;
+    width: fit-content;
+    border: 3px solid var(--altgeld-orange-highlight);
+    border-radius: 10px;
+    background-color: var(--illini-orange-supplement);
+    cursor: pointer;
+}
+button p {
+    margin: 0;
+    font-size: 15px;
+}
+
+
+
+/* ===== STOPS LIST ===== */
+.title-wrapper div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#search-box {
+    margin-left: 10px;
+    padding: 3px 10px;
+    width: 200px;
+    display: inline-block;
+    border: 3px solid var(--altgeld-orange-highlight);
+    border-radius: 5px;
+    font-size: 24px;
+}
+#only-favorites {
+    width: 15px;
+    height: 15px;
+    align-self: flex-end;
+}
+#refresh {
+    position: absolute;
+    right: 1%;
+    margin: 0;
+    padding: 2px;
+    border: 5px solid var(--altgeld-orange-highlight);
+    border-radius: 10px;
+    background-color: var(--illini-orange-supplement);
+    cursor: pointer;
+    box-sizing: content-box;
+}
+#stop-title {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--illini-orange-supplement);
+}
+#stop-title img  {
+    width: 25px;
+    height: 25px;
+}
+.favorited-star { cursor: pointer; }
+
+#arrivals-display {
+    margin: 0;
+    padding: 10px 0;
+    width: 100%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+.arrival {
+    margin: 10px;
+    width: 80%;
+    padding: 3px 3px 3px 15px;
+    border-radius: 11px;
+}
+.arrival-content {
+    padding: 10px;
+    border-radius: 0 10px 10px 0;
+    background-color: var(--sky-blue);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+.arrival-content div {
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+span {
+    margin: 5px;
+    width: fit-content;
+}
+span h1, span h2, span h3, span h4, span h5, span h6 {
+    display: inline-block;
+    text-align: left;
+}
+span h3 { font-size: 25px; }
+span h4 { font-size: 20px; }
+span h5 { font-size: 17px; }
+
+#leaflet-map {
+    position: relative;
+    width: 100%;
+    height: 35%;
+    border: 10px solid var(--altgeld-orange-highlight);
+}
+.leaflet-info {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    padding: 5px;
+    background-color: white;
+    font-size: 12px;
+    /* Yes, the z-index really does need to be 1100 */
+    z-index: 1100;
+}
+
+
+
+/* ===== FAVORITES ===== */
+/* Nothing :) */
+
+
+
+/* ===== NEARBY STOPS ===== */
+/* Nothing :) */
+
+
+
+/* ===== MAPS ===== */
+#map-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+#map-display div h2 { padding: 20px 0 5px 0; }
+#map-display div img { width: 100% }
+
+
+
+/* ===== TRIP PLANNER ===== */
+#grid-wrapper {
+    width: 100%;
+    height: 85%;
+    display: grid;
+    grid-template-areas:
+        "start-search  itineraries"
+        "end-search    itineraries"
+        "settings        itineraries";
+    grid-template-rows: 40% 40% 20%;
+    grid-template-columns: 350px auto;
+    border-top: 5px solid var(--altgeld-orange-highlight);
+}
+
+#start-s { grid-area: start-search; }
+#end-s { grid-area: end-search; }
+#start-s, #end-s {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 5px solid var(--altgeld-orange-highlight);
+}
+.wrapper-search {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#start-search, #end-search {
+    padding: 3px;
+    width: 150px;
+    border: 3px solid var(--altgeld-orange-highlight);
+    border-radius: 5px;
+    font-size: 15px;
+}
+#start-results, #end-results {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.planner-stop {
+    margin: 5px;
+    padding: 7px;
+    height: fit-content;
+    background-color: var(--illini-orange-supplement);
+    border-radius: 25px;
+    font-size: 15px;
+    color: black;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.5s;
+}
+.planner-stop:hover {
+    background-color: var(--illini-blue-highlight);
+    color: white;
+}
+.selected, .selected:hover {
+    background-color: var(--illini-blue);
+    color: white;
+}
+
+.settings {
+    grid-area: settings;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+#itineraries {
+    grid-area: itineraries;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 50px;
+    border-left: 5px solid var(--altgeld-orange-highlight);
+    overflow-x: scroll;
+}
+#itineraries .itinerary:first-child { margin-left: auto; }
+#itineraries .itinerary:last-child { margin-right: auto; }
+.itinerary {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.leg {
+    padding: 15px;
+    width: 250px;
+    border-radius: 25px;
+    border: 3px solid black;
+    text-align: center;
+}
+.leg.walk { background-color: var(--illini-orange-supplement); }
+.leg.service { background-color: var(--illini-blue-supplement); }
+.leg.end {
+    margin-bottom: 50px;
+    /* background-color: #ffd278; */
+    background-color: #ff7c7c;
+    font-weight: 800;
+}
+.leg h3 {
+    font-weight: 800;
+}
+.leg h4 {
+    margin: 3px 5px;
+    font-weight: 500;
+}
+.leg p { margin: 3px 5px 15px 5px; }
+.itinerary img {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* ===== MOBILE RESIZING ===== */
+@media screen and (max-width: 770px) {
+    #nav {
+        height: 30%;
+        min-height: 180px;
+    }
+    #nav li.right, #nav li {
+        float: none;
+        width: 100%;
+        height: 16.67%;
+    }
+
+    .displays { height: 70%; }
+    
+    #stop-title img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .arrival-content { flex-direction: column; }
+}
+
+
+
+/* For very small phones */
+@media screen and (max-width: 650px) {
+    h2 { font-size: 20px; }
+    h3 { font-size: 18px; }
+    #search-box {
+        width: 150px;
+        font-size: 20px;
+    }
+
+    span h3 { font-size: 20px; }
+    span h4 { font-size: 15px; }
+    span h5 { font-size: 12px; }
+    .arrival-content { gap: 0px; }
+
+
+    #grid-wrapper {
+        height: 150%;
+        grid-template-areas:
+            "start-search end-search"
+            "settings settings"
+            "itineraries itineraries";
+        grid-template-rows: 20% 15% 65%;
+        grid-template-columns: 50% 50%;
+    }
+
+    #start-s { border-right: 2.5px solid var(--altgeld-orange-highlight); }
+    #end-s { border-left: 2.5px solid var(--altgeld-orange-highlight); }
+
+    #itineraries {
+        border-left: 0px;
+        border-top: 5px solid var(--altgeld-orange-highlight);
+    }
+}
