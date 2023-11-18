@@ -1,6 +1,7 @@
 # UIUC Bus Tracker
 A bus tracker for all of UIUC: Campus, Champaign, and Urbana!
 
+
 ## Setup
 Run
  ```bash
@@ -17,6 +18,8 @@ const VER = // Your version (e.g. "v2.2")
 const REQ_URL = `https://developer.cumtd.com/api/${VER}/json/`;
 ```
 The suggested version is "v2.2", since that is what this project has been built around.
+
+A working version can be found [here](https://gsdv.me/uiuc/bus).
 
 
 ## How to Use
